@@ -1,5 +1,6 @@
 class DosesController < ApplicationController
   before_action :set_cocktail, only: [:new, :create, :destroy]
+  before_action :set_dose, only: [:destroy]
 
   def new
     @dose = Dose.new
@@ -16,6 +17,12 @@ class DosesController < ApplicationController
   end
 
   def destroy
+    @dose.destroy
+
+    respond_to do |format|
+      format.html { redirect_to @cocktail, notice: "Ingredient was succesfully removed." }
+      format.js { }
+    end
   end
 
   private

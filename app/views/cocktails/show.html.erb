@@ -10,13 +10,7 @@
 <div class="right-container">
   <%= image_tag @cocktail.photo_url, class: "img-responsive" %>
   <% if @cocktail.doses.any? %>
-    <div id=#ingredients>
-      <hr>
-      <strong>Ingredients:</strong>
-      <% @cocktail.doses.each do |dose| %>
-        <p><%= dose.description %> <%= dose.ingredient.name %></p>
-      <% end %>
-    </div>
+    <%= render 'ingredients' %>
   <% end %>
 </div>
 
