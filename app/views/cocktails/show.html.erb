@@ -1,2 +1,7 @@
 <h1><%= @cocktail.name %></h1>
+<%= image_tag @cocktail.photo_url %>
+<h3>ABOUT THE <%= @cocktail.name.upcase %> COCKTAIL</h3>
+<p><%= @cocktail.about %></p>
+<h3>HOW TO MAKE THE <%= @cocktail.name.upcase %> COCKTAIL</h3>
+<%= @cocktail.instructions %>
 
