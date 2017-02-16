@@ -9,6 +9,7 @@ class DosesController < ApplicationController
   def create
     @dose = Dose.new(dose_params)
     @dose.cocktail = @cocktail
+
     if @dose.save
       redirect_to cocktail_path(@cocktail)
     else
@@ -20,7 +21,7 @@ class DosesController < ApplicationController
     @dose.destroy
 
     respond_to do |format|
-      format.html { redirect_to @cocktail, notice: "Ingredient was succesfully removed." }
+      format.html { redirect_to cocktail_path(@cocktail), notice: "Ingredient was succesfully removed." }
       format.js { }
     end
   end
