@@ -5,5 +5,5 @@
   <%= f.association :ingredient, collection: Ingredient.all %>
   <%= f.hidden_field :cocktail_id, value: @cocktail.id %>
 
-  <%f.button :submit %>
+  <%= f.button :submit, value: 'Add' %>
 <% end %>
