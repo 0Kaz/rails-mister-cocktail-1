@@ -4,11 +4,20 @@
   <p><%= @cocktail.about %></p>
   <h3>HOW TO MAKE THE <%= @cocktail.name.upcase %> COCKTAIL</h3>
   <%= @cocktail.instructions %>
-  <h3>EDIT <%= @cocktail.name.upcase %>'S INGREDIENTS</h3>
+  <h3>ADD <%= @cocktail.name.upcase %>'S INGREDIENTS</h3>
   <%= render 'doses/new' %>
 </div>
 <div class="right-container">
   <%= image_tag @cocktail.photo_url, class: "img-responsive" %>
+  <% if @cocktail.doses.any? %>
+    <div id=#ingredients>
+      <hr>
+      <strong>Ingredients:</strong>
+      <% @cocktail.doses.each do |dose| %>
+        <p><%= dose.description %> <%= dose.ingredient.name %></p>
+      <% end %>
+    </div>
+  <% end %>
 </div>
 
 
