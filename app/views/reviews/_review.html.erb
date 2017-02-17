@@ -2,7 +2,9 @@
   <table>
     <tr>
       <td id="review-content"><%= review.content %></td>
-      <td id="review-rating"><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></td>
+      <td id="review-rating">
+        <%= set_stars(review.rating) %>
+      </td>
     </tr>
   </table>
 </div>
