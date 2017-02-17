@@ -6,6 +6,7 @@
       </div>
       <div>
         <%= cocktail.name.upcase %>
+        <%= link_to "Delete", cocktail_path(cocktail), method: :delete %>
       </div>
     <% end %>
   </div>
