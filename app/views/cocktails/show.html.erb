@@ -8,7 +8,9 @@
   <%= render 'doses/new' %>
 </div>
 <div class="right-container">
-<!-- PHOTO -->
+  <div class="img-responsive">
+    <%= image_tag @cocktail.photo, class: "img-responsive" %>
+  </div>
   <% if @cocktail.doses.any? %>
     <%= render 'ingredients' %>
   <% end %>
