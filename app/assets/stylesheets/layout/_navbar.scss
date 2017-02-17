@@ -124,6 +124,9 @@
   background: transparent !important;
   color: black !important;
 }
+.nav > li > a:hover, .nav > li > a:focus {
+  background-color: transparent !important;
+}
 .navbar-wagon-dropdown-menu:before {
   content: ' ';
   height: 10px;

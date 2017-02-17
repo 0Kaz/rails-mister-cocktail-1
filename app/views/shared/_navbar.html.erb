@@ -4,6 +4,37 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-    <%= link_to "Add Cocktail", new_cocktail_path, {class: "navbar-wagon-item navbar-wagon-link"} %>
+     <ul class="nav navbar-nav navbar-right">
+        <% if(!user_signed_in?) %>
+            <li>
+              <%= link_to "Add Cocktail", new_cocktail_path, {class: "navbar-wagon-item navbar-wagon-link"} %>
+            </li>
+            <li>
+              <%= link_to "Sign Up", new_user_registration_path, {class: "navbar-wagon-item navbar-wagon-link"} %>
+            </li>
+            <li>
+              <%= link_to "Sign In", new_user_session_path, {class: "navbar-wagon-item navbar-wagon-link"} %>
+            </li>
+        <% else %>
+            <li>
+              <%= link_to "Add Cocktail", new_cocktail_path, {class: "navbar-wagon-item navbar-wagon-link"} %>
+            </li>
+            <li class="dropdown">
+              <div class="avatar-circle">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <%= image_tag avatar_url(current_user), :class => "avatar-small" %>
+              </a>
+              </div>
+              <!--  <%= current_user.first_name %><span class="caret"></span></a> -->
+                <ul class="dropdown-menu">
+                    <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+                    <li><a href="#">Account Settings</a></li>
+                    <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+                </ul>
+            </li>
+        <% end %>
+     </ul>
   </div>
 </div>
+
+
