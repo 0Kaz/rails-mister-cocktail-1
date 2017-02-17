@@ -4,8 +4,15 @@
   <p><%= @cocktail.about %></p>
   <h3>HOW TO MAKE THE <%= @cocktail.name.upcase %> COCKTAIL</h3>
   <%= @cocktail.instructions %>
-  <h3>ADD <%= @cocktail.name.upcase %>'S INGREDIENTS</h3>
-  <%= render 'doses/new' %>
+  <hr>
+  <div>
+    <%= render 'reviews/new' %>
+  </div>
+  <div>
+    <% if @cocktail.reviews.any? %>
+        <%= render partial: 'reviews/review', collection: @cocktail.reviews %>
+    <% end %>
+  </div>
 </div>
 <div class="right-container">
   <div class="img-responsive">
@@ -14,6 +21,8 @@
   <% if @cocktail.doses.any? %>
     <%= render 'ingredients' %>
   <% end %>
+  <strong>Add Ingredient:</strong>
+  <%= render 'doses/new' %>
 </div>
 
 
