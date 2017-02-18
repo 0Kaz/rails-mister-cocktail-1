@@ -5,9 +5,10 @@
         <%= image_tag cocktail.photo, class: "img-responsive" %>
       </div>
       <div>
-        <%= cocktail.name.upcase %> by
-        <%= cocktail.user.first_name %>
-
+        <%= cocktail.name.upcase %>
+      </div>
+      <div>
+        Added by <%= cocktail.user.first_name %>
       </div>
     <% end %>
   </div>
