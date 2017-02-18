@@ -29,19 +29,20 @@
             <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
               <li>
                 <%= link_to edit_user_registration_path do %>
-                  <i class="fa fa-user"></i> <%= t(".profile", default: "Edit Profile") %>
+                  <%= t(".profile", default: "Edit Profile") %>
                 <% end %>
               </li>
               <li>
                 <%= link_to destroy_user_session_path, method: :delete do %>
-                  <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                  <%= t(".sign_out", default: "Log out") %>
                 <% end %>
-                <hr>
-                <li>
-                  <%= link_to new_cocktail_path do%>
-                    <i class="fa fa-glass"></i>Add Cocktail
-                  <% end %>
-                </li>
+              </li>
+              <hr>
+              <li>
+                <%= link_to "Add Cocktails", new_cocktail_path %>
+              </li>
+              <li>
+                <%= link_to "My Cocktails", user_cocktails_path(current_user) %>
               </li>
             </ul>
           </div>

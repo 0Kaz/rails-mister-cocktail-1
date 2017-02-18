@@ -7,9 +7,9 @@
       <div>
         <%= cocktail.name.upcase %>
       </div>
-      <div>
-        Added by <%= cocktail.user.first_name %>
-      </div>
     <% end %>
+      <div>
+        Added by <%= link_to cocktail.user.first_name, user_cocktails_path(cocktail.user), class: "link-to-user" %>
+      </div>
   </div>
 </div>

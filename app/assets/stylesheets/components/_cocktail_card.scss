@@ -1,4 +1,10 @@
 .cocktail-card a {
   color: #000;
-  text-decoration: none;
+}
+
+.link-to-user {
+  font-weight: bold;
+    :hover {
+      text-decoration: underline !important;
+    }
 }

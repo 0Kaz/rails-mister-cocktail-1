@@ -17,4 +17,6 @@ Rails.application.routes.draw do
     resources :doses, only: [:new, :create, :destroy]
     resources :reviews, only: [:create]
   end
+
+  get 'users/:id/cocktails' => 'cocktails#index', as: :user_cocktails
 end

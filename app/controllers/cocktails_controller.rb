@@ -9,6 +9,12 @@ class CocktailsController < ApplicationController
     else
       @cocktails = Cocktail.all.order("created_at DESC")
     end
+    if params[:id]
+      @user =User.find(params[:id])
+      @cocktails = @user.cocktails.all
+    else
+      @cocktails = Cocktail.all
+    end
   end
 
   def show
