@@ -6,14 +6,11 @@ class CocktailsController < ApplicationController
     @cocktails = Cocktail.all.order("created_at DESC")
     if params[:search]
       @cocktails = Cocktail.search(params[:search]).order("created_at DESC")
-    else
-      @cocktails = Cocktail.all.order("created_at DESC")
-    end
-    if params[:id]
+    elsif params[:id]
       @user =User.find(params[:id])
       @cocktails = @user.cocktails.all
     else
-      @cocktails = Cocktail.all
+      @cocktails = Cocktail.all.order("created_at DESC")
     end
   end
 
