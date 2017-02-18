@@ -12,7 +12,11 @@ class CocktailsController < ApplicationController
   end
 
   def new
-    @cocktail = current_user.cocktails.new
+    if current_user.first_name.nil? || current_user.first_name.empty?
+      redirect_to root_path, notice: "Please enter your name before adding a cocktail"
+    else
+      @cocktail = current_user.cocktails.new
+    end
   end
 
   def edit

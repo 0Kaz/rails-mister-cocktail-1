@@ -11,7 +11,7 @@ class DosesController < ApplicationController
     @dose.cocktail = @cocktail
 
     if @dose.save
-      redirect_to cocktail_path(@cocktail)
+      redirect_to request.referrer
     else
       render 'cocktails/show'
     end
