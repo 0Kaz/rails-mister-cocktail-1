@@ -5,11 +5,15 @@
   </div>
   <!-- Search form -->
   <div class="search-bar-wrapper hidden-xs hidden-sm">
-    <form action="" class="navbar-wagon-search">
+    <%= form_tag(cocktails_path, method: :get, class: "navbar-wagon-search") do %>
+      <i class="fa fa-search"></i>
+      <%= text_field_tag :search, params[:search], class: "navbar-wagon-search-input" %>
+    <% end %>
+    <!-- <form action="" class="navbar-wagon-search">
       <i class="fa fa-search"></i>
       <input type="text" class="navbar-wagon-search-input">
     </form>
-  </div>
+ -->  </div>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right">
@@ -24,8 +28,8 @@
             <%= image_tag avatar_url(current_user), class: "avatar-bordered dropdown-toggle", id:"navbar-wagon-menu", "data-toggle" => "dropdown" %>
             <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
               <li>
-                <%= link_to "#" do %>
-                  <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+                <%= link_to edit_user_registration_path do %>
+                  <i class="fa fa-user"></i> <%= t(".profile", default: "Edit Profile") %>
                 <% end %>
               </li>
               <li>

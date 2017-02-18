@@ -8,4 +8,8 @@ class Cocktail < ApplicationRecord
   validates :about, :instructions, :photo, presence: true
 
   mount_uploader :photo, PhotoUploader
+
+  def self.search(search)
+    where("name ILIKE ? OR about ILIKE ? OR instructions ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+  end
 end

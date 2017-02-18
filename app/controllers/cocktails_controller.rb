@@ -3,7 +3,12 @@ class CocktailsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @cocktails = Cocktail.all
+    @cocktails = Cocktail.all.order("created_at DESC")
+    if params[:search]
+      @cocktails = Cocktail.search(params[:search]).order("created_at DESC")
+    else
+      @cocktails = Cocktail.all.order("created_at DESC")
+    end
   end
 
   def show
@@ -12,11 +17,7 @@ class CocktailsController < ApplicationController
   end
 
   def new
-    if current_user.first_name.nil? || current_user.first_name.empty?
-      redirect_to root_path, notice: "Please enter your name before adding a cocktail"
-    else
-      @cocktail = current_user.cocktails.new
-    end
+    @cocktail = current_user.cocktails.new
   end
 
   def edit
