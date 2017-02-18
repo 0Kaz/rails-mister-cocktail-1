@@ -5,8 +5,9 @@
         <%= image_tag cocktail.photo, class: "img-responsive" %>
       </div>
       <div>
-        <%= cocktail.name.upcase %>
-        <%= link_to "Delete", cocktail_path(cocktail), method: :delete %>
+        <%= cocktail.name.upcase %> by
+        <%= cocktail.user.first_name %>
+
       </div>
     <% end %>
   </div>

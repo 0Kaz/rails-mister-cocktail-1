@@ -1,6 +1,6 @@
 class CocktailsController < ApplicationController
   before_action :set_cocktail, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @cocktails = Cocktail.all
@@ -12,14 +12,14 @@ class CocktailsController < ApplicationController
   end
 
   def new
-    @cocktail = Cocktail.new
+    @cocktail = current_user.cocktails.new
   end
 
   def edit
   end
 
   def create
-    @cocktail = Cocktail.new(cocktail_params)
+    @cocktail = current_user.cocktails.new(cocktail_params)
     if @cocktail.save
       redirect_to cocktail_path(@cocktail)
     else
