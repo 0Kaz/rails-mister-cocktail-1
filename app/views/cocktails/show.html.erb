@@ -1,5 +1,8 @@
 <div class="left-container">
   <h1><%= @cocktail.name.upcase %></h1>
+  <% if current_user == @cocktail.user %>
+    <%= link_to "Edit Cocktail", edit_cocktail_path(@cocktail), class: "btn btn-default" %>
+  <% end %>
   <h3>ABOUT THE <%= @cocktail.name.upcase %> COCKTAIL</h3>
   <p><%= @cocktail.about %></p>
   <h3>HOW TO MAKE THE <%= @cocktail.name.upcase %> COCKTAIL</h3>
@@ -21,8 +24,6 @@
   <% if @cocktail.doses.any? %>
     <%= render 'ingredients' %>
   <% end %>
-  <strong>Add Ingredient:</strong>
-  <%= render 'doses/new' %>
 </div>
 
 

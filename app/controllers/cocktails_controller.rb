@@ -16,6 +16,10 @@ class CocktailsController < ApplicationController
   end
 
   def edit
+    if current_user != @cocktail.user
+      redirect_to cocktail_path(@cocktail)
+    end
+    @dose = Dose.new
   end
 
   def create
@@ -28,6 +32,11 @@ class CocktailsController < ApplicationController
   end
 
   def update
+    if @cocktail.update(cocktail_params)
+      redirect_to cocktail_path(@cocktail), notice: "Cocktail Updated"
+    else
+      render :edit
+    end
   end
 
   def destroy
