@@ -1,0 +1,4 @@
+<%= link_to user_cocktails_path(user), class: "avatar-card" do %>
+  <%= image_tag avatar_url(user), class: "avatar-large" %>
+  <p><%= user.first_name %></p>
+<% end %>

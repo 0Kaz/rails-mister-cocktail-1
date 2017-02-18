@@ -10,6 +10,10 @@
   padding-bottom: 5em;
 }
 
+.padded-right {
+  padding-right: 10px;
+}
+
 // Backgrounds
 .bg-black {
   background: #4a4a4a;
@@ -22,4 +26,13 @@
 }
 .bg-dark-blue {
   background: #3b5998;
+}
+
+.left-align {
+  justify-content: flex-start;
+}
+
+.valign {
+  display: flex;
+  align-items: center;
 }

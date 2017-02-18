@@ -1,8 +1,7 @@
 <div class="review-card">
   <div class="row">
     <div class="col-md-3 text-center">
-      <%= image_tag avatar_url(review.user), class: "avatar-large" %>
-      <p><%= review.user.first_name %></p>
+      <%= render 'shared/avatar_card', user: review.user %>
     </div>
     <div class="col-md-9">
       <p id="review-content"><%= review.content %></p>
