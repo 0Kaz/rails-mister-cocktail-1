@@ -1,16 +1,7 @@
 .review-card {
   margin-top: 20px;
 
-  table {
-    width: 100%;
-  }
-
-  #review-content {
-    width: 80%;
-  }
-
-  #review-rating {
-    width: 20%;
-    text-align: right;
+  .review-body {
+    padding-left: 10px;
   }
 }
