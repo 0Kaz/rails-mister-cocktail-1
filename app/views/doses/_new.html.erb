@@ -2,7 +2,7 @@
   <%= f.error_notification %>
 
   <%= f.input :description %>
-  <%= f.association :ingredient, collection: Ingredient.all %>
+  <%= f.input :ingredient_name %>
   <%= f.hidden_field :cocktail_id, value: @cocktail.id %>
 
   <%= f.button :submit, value: 'Add' %>

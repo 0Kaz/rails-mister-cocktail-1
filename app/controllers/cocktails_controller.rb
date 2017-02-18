@@ -25,7 +25,7 @@ class CocktailsController < ApplicationController
 
   def edit
     if current_user != @cocktail.user
-      redirect_to cocktail_path(@cocktail)
+      redirect_to edit_cocktail_path(@cocktail)
     end
     @dose = Dose.new
   end

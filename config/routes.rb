@@ -21,4 +21,6 @@ Rails.application.routes.draw do
   end
 
   get 'users/:id/cocktails' => 'cocktails#index', as: :user_cocktails
+
+  resources :ingredients, only: [:index]
 end
