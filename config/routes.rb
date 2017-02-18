@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root to: 'cocktails#index'
 
-  devise_for :users, skip: :registrations
+  devise_for :users,
+    controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   devise_scope :user do
     resource :registration,
       only: [:new, :create, :edit, :update],
