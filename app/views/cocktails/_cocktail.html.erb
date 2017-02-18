@@ -1,5 +1,4 @@
-<div class="col-xs-6 col-sm-4">
-  <div class="cocktail-card">
+<div class="col-xs-6 col-sm-4 cocktail-card">
     <%= link_to cocktail_path(cocktail) do %>
       <div>
         <%= image_tag cocktail.photo, class: "img-responsive" %>
@@ -11,5 +10,4 @@
       <div>
         Added by <%= link_to cocktail.user.first_name, user_cocktails_path(cocktail.user), class: "link-to-user" %>
       </div>
-  </div>
 </div>
