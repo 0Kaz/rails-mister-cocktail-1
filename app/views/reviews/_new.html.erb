@@ -1,5 +1,4 @@
-<h4>Add A Review</h4>
-<%= simple_form_for ([@cocktail, @review]) do |f| %>
+<%= simple_form_for [@cocktail, @review], url: cocktail_reviews_path(@cocktail), remote: true do |f| %>
   <%= f.input :content %>
   <%= f.input :rating, collection: (0..5) %>
   <%= f.button :submit, value: 'Add Review', class: "btn btn-default btn-rounded" %>
