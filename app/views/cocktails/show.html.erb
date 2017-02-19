@@ -11,17 +11,19 @@
   <%= @cocktail.instructions %>
   <hr>
   <% if @cocktail.reviews.blank? %>
-    <p>Be the first to leave a review</p>
+    <p id="add-first-review">Be the first to leave a review</p>
   <% end %>
+  <div id="reviews">
+    <% if @cocktail.reviews.any? %>
+      <h4>Reviews</h4>
+      <%= render partial: 'reviews/review', collection: @cocktail.reviews %>
+    <% end %>
+  </div>
   <h4>Add A Review</h4>
   <div>
     <%= render 'reviews/new' %>
   </div>
-  <div id="reviews">
-    <% if @cocktail.reviews.any? %>
-      <%= render partial: 'reviews/review', collection: @cocktail.reviews %>
-    <% end %>
-  </div>
+
 </div>
 <div class="right-container">
   <div class="img-responsive">

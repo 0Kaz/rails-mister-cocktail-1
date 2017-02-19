@@ -5,6 +5,8 @@
   var new_review = $("<%= j render 'reviews/review', review: @review %>").hide()
   // Add it to the DOM, at the end of the existing reviews. It's still hidden.
   $('#reviews').append(new_review);
+  // Hide Be the First Reviewer Text
+  $('#add-first-review').hide();
   // Show the new review with an animation!
   new_review.slideDown();
   // Reset the form
