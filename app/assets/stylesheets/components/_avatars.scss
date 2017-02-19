@@ -31,10 +31,23 @@
 }
 
 .avatar-card {
-  .date-info {
-    padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  .user-and-date {
+    a {
+      color: #333333;
+    }
+    a:hover {
+      text-decoration: none;
+    }
     p {
       margin-bottom: 0;
+    }
+    .user-name {
+      font-size: 19px;
+    }
+    .date-info {
       font-weight: lighter;
       font-size: 15px;
     }

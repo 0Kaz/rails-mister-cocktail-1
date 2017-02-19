@@ -1,12 +1,13 @@
-<div class="valign left-align avatar-card">
-  <div class=" text-center padded-right">
+<div class="avatar-card">
+  <div class="padded-right">
     <%= link_to user_cocktails_path(user), class: "avatar-link" do %>
       <%= image_tag avatar_url(user), class: "avatar-large" %>
-      <p class="user-name"><%= user.first_name %></p>
     <% end %>
   </div>
-  <div class="date-info">
-    <p>Added on</p>
-    <p><%= timestamp.strftime("%d %b, %Y") %></p>
+  <div class="user-and-date">
+    <p class="user-name">
+      <%= link_to user.first_name, user_cocktails_path(user) %>
+    </p>
+    <p class="date-info"><%= timestamp.strftime("%d %b, %Y") %></p>
   </div>
 </div>
