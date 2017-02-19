@@ -19,12 +19,24 @@
   border: white 1px solid;
 }
 
-.avatar-card {
+.avatar-link {
   text-decoration: none;
   color: #000;
 }
 
-.avatar-card:hover {
+.avatar-link:hover {
   text-decoration: none;
   color: #000;
+  opacity: 0.8;
+}
+
+.avatar-card {
+  .date-info {
+    padding-bottom: 20px;
+    p {
+      margin-bottom: 0;
+      font-weight: lighter;
+      font-size: 15px;
+    }
+  }
 }

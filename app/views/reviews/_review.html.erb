@@ -1,12 +1,14 @@
 <div class="review-card">
   <div class="row">
-    <div class="col-md-3 text-center">
-      <%= render 'shared/avatar_card', user: review.user %>
-    </div>
     <div class="col-md-9">
-      <p id="review-content"><%= review.content %></p>
+    <%= render 'shared/avatar_card', { user: review.user, timestamp: review.created_at } %>
+    </div>
+    <div class="col-md-3">
       <p id="review-rating"><%= set_stars(review.rating) %></p>
     </div>
+  </div>
+  <div class="row">
+    <p id="review-content"><%= review.content %></p>
   </div>
 </div>
 
