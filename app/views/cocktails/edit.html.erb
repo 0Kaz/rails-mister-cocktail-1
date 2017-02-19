@@ -10,6 +10,7 @@
     <%= f.input :instructions, label: false %>
     <%= f.button :submit, class: "btn btn-default" %>
     <%= link_to "Delete Cocktail", cocktail_path(@cocktail), method: :delete, class: "btn btn-default", :data => {:confirm => "Are You Sure?"} %>
+    <%= link_to "Cancel", request.referer.present? ? request.referer : root_path, class: "btn btn-default" %>
 
 <% end %>
 </div>

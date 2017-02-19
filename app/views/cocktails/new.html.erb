@@ -8,5 +8,9 @@
   <%= f.input :photo %>
   <%= f.input :photo_cache, as: :hidden %>
 
-  <%= f.button :submit %>
+  <div>
+    <%= f.button :submit %>
+    <%= link_to "Cancel", request.referer.present? ? request.referer : root_path, class: "btn btn-default" %>
+  </div>
 <% end %>
+
