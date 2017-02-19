@@ -1,7 +1,7 @@
 <div class="left-container">
   <h1><%= @cocktail.name.upcase %></h1>
   <% if current_user == @cocktail.user %>
-    <%= link_to "Edit Cocktail", edit_cocktail_path(@cocktail), class: "btn btn-default" %>
+    <%= link_to "Edit Cocktail", edit_cocktail_path(@cocktail), class: "btn btn-default btn-rounded" %>
   <% else %>
     <%= render 'shared/avatar_card', {user: @cocktail.user, timestamp: @cocktail.created_at} %>
   <% end %>

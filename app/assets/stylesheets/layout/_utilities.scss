@@ -5,7 +5,14 @@
  * ------------------------------------- */
 // General
 a {
+  color: #333333;
+  text-decoration: none;
   cursor: pointer;
+}
+
+a:focus, a:hover {
+  color: #333333;
+  text-decoration: none;
 }
 
 // Paddings

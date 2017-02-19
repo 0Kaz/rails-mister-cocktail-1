@@ -2,5 +2,5 @@
 <%= simple_form_for ([@cocktail, @review]) do |f| %>
   <%= f.input :content %>
   <%= f.input :rating, collection: (0..5) %>
-  <%= f.button :submit, value: 'Add Review' %>
+  <%= f.button :submit, value: 'Add Review', class: "btn btn-default btn-rounded" %>
 <% end %>
