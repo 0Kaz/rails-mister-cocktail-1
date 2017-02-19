@@ -11,9 +11,15 @@ class DosesController < ApplicationController
     @dose.cocktail = @cocktail
 
     if @dose.save
-      redirect_to request.referrer
+      respond_to do |format|
+        format.html { redirect_to request.referrer }
+        format.js
+      end
     else
-      render 'cocktails/show'
+      respond_to do |format|
+        format.html { render 'cocktails/show' }
+        format.js
+      end
     end
   end
 
