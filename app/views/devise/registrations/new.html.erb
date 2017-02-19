@@ -1,19 +1,37 @@
-<h2>Sign up</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :first_name, required: true %>
-    <%= f.input :last_name, required: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+<div class="popover-container">
+  <div class="signup-login-btn-container">
+    <%= link_to "Sign up with Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-block btn-large signup-login-btn-xl btn-facebook" %>
+    <span class="icon-facebook">
+      <i class="fa fa-facebook"></i>
+    </span>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+  <div class="signup-or-separator">
+    <span class="signup-or-separator-text">or</span>
+    <hr>
   </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :email, required: true, autofocus: true %>
+      <%= f.input :first_name, required: true %>
+      <%= f.input :last_name, required: true %>
+      <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+      <%= f.input :password_confirmation, required: true %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Sign up", class: "btn btn-large btn-block signup-login-btn-xl" %>
+    </div>
+  <% end %>
+
+  <hr>
+  <div>
+    <div class="signup-login-switch-text">
+      Already have an account?
+    </div>
+    <%= link_to "Log in", new_session_path(resource_name), class: "text-muted", class: "btn btn-default float-right" %>
+  </div>
+</div>

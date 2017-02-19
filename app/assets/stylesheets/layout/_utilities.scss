@@ -28,6 +28,9 @@
   background: #3b5998;
 }
 
+
+// Alignment
+
 .left-align {
   justify-content: flex-start;
 }
@@ -35,4 +38,12 @@
 .valign {
   display: flex;
   align-items: center;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
 }
